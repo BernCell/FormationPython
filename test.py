@@ -41,10 +41,10 @@ print(type(e))
 
 """ Fonction Input et typage d'objets"""
 
-"""number = input("Entrez un nombre :")
+number = input("Entrez un nombre :")
 print(number)
 
-print(type(number))"""
+print(type(number))
 
 """ Concaténation de variables"""
 
