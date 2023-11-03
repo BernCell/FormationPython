@@ -41,10 +41,10 @@ print(type(e))
 
 """ Fonction Input et typage d'objets"""
 
-number = input("Entrez un nombre :")
+"""number = input("Entrez un nombre :")
 print(number)
 
-print(type(number))
+print(type(number))"""
 
 """ Concaténation de variables"""
 
@@ -129,4 +129,65 @@ for i in range(10):
     print(i)
     
 for i in range(10):
-    print(str(i).zfill(2))    
+    print(str(i).zfill(4))    
+    
+    """Méthodes "is" (lower/upper/digit/title) Chaine de Caractères"""
+a =  "BONJOUR".islower()
+
+print(a)
+
+a =  "bonjour".islower()
+
+print(a)
+
+a =  "BONJOUR".isupper()
+
+print(a)
+
+a =  "bonjour".isupper()
+
+print(a)
+
+a =  "bonjour tout le monde".istitle()
+
+print(a)
+
+a =  "Bonjour Tout Le Monde".istitle()
+
+print(a)
+
+a =  "Bonjour vous 5".isdigit()
+
+print(a)
+
+a =  "5".isdigit()
+
+print(a)
+
+#Compter le nombre d'occurences
+"""Méthode 'count' """
+a = "Ce soir c'est un soir pour dire Bonsoir".count("soir")
+
+print(a)
+
+a = "Ce soir c'est un soir pour dire Bonsoir".count(" soir") #placer un espace avant le mot recherché pour ne pas avoir comptabilisé 'soir' de 'bonsoir'
+
+print(a)
+
+#Trouver une substring avec 'find" ou 'index'
+
+a = "Ce soir c'est un soir pour dire Bonsoir".find("soir")
+
+print(a) # comptabilise à partir de quel caractère apparait la substring recherchée
+
+a = "Ce soir c'est un soir pour dire Bonsoir".index("soir")
+
+print(a) # comptabilise à partir de quel caractère apparait la substring recherchée
+
+a = "Ce soir c'est un soir pour dire Bonsoir".find("jour") #quand la substring est introuvable la valeur retournée est '-1', quand la méthode index est utilisée et que la substring est introuvable => erreur 
+
+print(a)
+
+a = "Ce soir c'est un soir pour dire Bonsoir".rfind("soir") #quand la méthode 'rfind' est utilisée, c'est la 1ère occurrence de la substring qui est recherchée en partant de la droite de la chaine de caractères initiale. la méthode 'lfind' n'existe pas car la recherche se fait déjà automatiquement au début de la chaine de caractère initiale avec 'find'
+
+print(a)
