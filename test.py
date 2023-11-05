@@ -191,3 +191,94 @@ print(a)
 a = "Ce soir c'est un soir pour dire Bonsoir".rfind("soir") #quand la méthode 'rfind' est utilisée, c'est la 1ère occurrence de la substring qui est recherchée en partant de la droite de la chaine de caractères initiale. la méthode 'lfind' n'existe pas car la recherche se fait déjà automatiquement au début de la chaine de caractère initiale avec 'find'
 
 print(a)
+
+#Chercher au début et à la Fin de chaine
+
+a = "image.png".startswith("image") 
+
+print(a)
+
+a = "image.png".startswith("fichier") 
+
+print(a)
+
+a = "image.png".endswith("png") 
+
+print(a)
+
+a = "image.png".endswith("jpg") 
+
+print(a) 
+
+""" Opérateurs"""
+#Opérateurs mathématiques 
+
+print (10 + 7) 
+
+print (5-2)
+
+print (5 * 2)
+
+print (12 / 3 ) # donne un float
+
+print("Hello" + "Dolly") #Concaténation
+
+print("Funky" * 2)
+
+##Modulo ( reste d'une division)
+print(15 % 3) #reste 0
+print(15 % 6) #reste 3
+
+#Division entière
+print(14//3) #donne l'entier le plus proche
+
+#opérateur "puissance" = **
+
+print(3**2) #9
+
+#Opérateurs d'assignation
+    ##Incrémentation
+i = 0
+
+for i in range(3):
+    i+=1
+    print("la valeur de i = " + str(i))
+
+#Opérateurs de comparaison
+## < > <= >= == !=
+### Différence entre == et is
+
+a = [1, 2, 3]
+b = [1, 2, 3]
+
+print (a == b) # True
+
+print (a is b) # False car l'adresse en mémoire de a et b est différente sauf pour des valeurs entre -5 et 256
+
+print(id(a))
+print(id(b))
+
+a =10
+b=10
+print (a == b)
+print (a is b) #true car case mémoire équivalente car nombre compris entre -5 et 256
+
+a = - 4
+b = -4
+c = 256
+d = 256
+
+print (a == b)
+print (c == d)
+print (a is b) 
+print (c is d)#true car case mémoire équivalente car nombre compris entre -5 et 256
+
+a = - 6
+b = -6
+c = 300
+d = 300
+
+print (a == b)
+print (c == d)
+print (a is b) 
+print (c is d)#false car nombre non compris entre -5 et 256, bizarrement retourne True
