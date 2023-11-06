@@ -362,3 +362,86 @@ print(url)
 
 
 ##main.py
+
+"""Structures Conditionnelles"""
+#Introduction
+## Une condition retourne un booléen
+
+age = 54
+
+if age >= 18 :
+    print( f"Vous avez {age} ans, vous êtes donc majeur")
+
+age = int(input("Quel age avez-vous ? "))
+
+if age >= 18:
+    print( f"Vous avez {age} ans, vous êtes donc majeur !")
+elif age < 18:
+    print("Dsl, vous n'avez pas accès à ce contenu car vous êtes mineur !")
+
+user = "admin" 
+  
+if user =="admin":
+    print("Accès Autorisé")
+elif user == "root":    
+    print("Accès Autorisé")
+else:
+    print("Accès Refusé")
+    
+note = 19
+
+if note <= 10 :
+    print("Vous avez moins que la moyenne !")
+elif note > 10 and note <= 14:
+    print("Vous avez la moyenne !")
+elif note > 14 and note < 18:
+    print("Bravo, vous faites partie des meilleurs !!!")
+else:
+    print("Bravo vous êtes le mieux noté !!!")
+    
+    
+#Les Opérateurs ternaires   
+
+## version normale en 5 lignes
+age =25
+
+if age >= 18:
+    majeur = True 
+else:
+    majeur = False
+    
+    
+## version ternaire en 2 lignes, seulement valable pour une structure if / else 
+
+age = 30 
+
+majeur = True if age >= 18 else False
+
+#opérateurs logiques (and, or, not)
+## version normale 
+password = "admin"
+if user == "admin":
+    if password == "admin":
+        print("Access Granted")
+        
+## version opérateur logique 
+if user == "admin" and password == "admin":
+    print("Access Granted")
+    
+### Toutes les conditions doivent être vraies
+
+7 > 2 and 7 < 15
+
+### priorité au and par rapport au or
+7 > 2 and  7 < 10 or 7 > 12
+###  True            False => False
+
+7 > 2 and  (7 < 10 or 7 > 12)
+###True et   True  ou False => True
+
+# Opérateur not 
+## notTrue => False
+## notFalse => True
+
+if not user == "admin":
+    print("Access Denied")
