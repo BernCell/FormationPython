@@ -445,3 +445,64 @@ if user == "admin" and password == "admin":
 
 if not user == "admin":
     print("Access Denied")
+    
+    
+"""Erreurs rencontrées"""
+
+#Erreur de syntaxe ou syntax error
+ ## For i in range(10):
+    ##print(i)
+ ## erreur de syntaxe sur le for qui ne s'écrit pas avec une majuscule
+
+ ##Sensibilité à la casse
+  ### Oubli des 2 points
+  ###for i in range(10)
+
+ ##Mots réservés:
+  ### 
+
+  ##Oubli des guillemets
+  
+#Erreurs d'éxécution, runtime errors
+
+    ##NameError : une variable non définie
+    
+    ##TypeError : variable non convertie en "int"  ou "str" 
+    ## par exemple a ="2" + 2
+     ### erreur de concaténation, on ne peut concaténer des str à des str et non des int
+     
+#Erreurs sémantiques 
+
+""" Modules et Fonctions """
+###############################
+########## Modules ############
+
+# Modules random ( pour générer des nbres aléatoires) et os ( pour gérer les fichiers du systeme d'exploitation)
+
+#Module random et fonction randint
+
+import random
+
+nbre = random.randint(0, 1)
+
+print("La fonct° randint = " + str(nbre)) #retourne soit 0 soit 1
+
+# La fonction uniform
+
+import random
+
+nbre = random.uniform(0, 1)
+
+print("La fonct° uniform = " + str(nbre)) # retourne un nombre décimal (float) aléatoire entre 0 et 1
+
+# La fonction randrange
+
+import random
+
+nbre = random.randrange(325)
+
+print("La fonct° randrange " + str(nbre)) # retourne un nombre aléatoire entre 0 et 324 325 étant exclu
+
+nbre = random.randrange(0, 511, 10)
+
+print("la fonc° randrange avec pas de 10 = " + str(nbre)) # retourne un nombre aléatoire entre 0 et 510 (511 étant exclu) avec un pas de 10  
