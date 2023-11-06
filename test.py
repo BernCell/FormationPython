@@ -253,7 +253,7 @@ b = [1, 2, 3]
 
 print (a == b) # True
 
-print (a is b) # False car l'adresse en mémoire de a et b est différente sauf pour des valeurs entre -5 et 256
+print (a is b) # False car l'adresse de l'objet en mémoire de a et b est différente sauf pour des valeurs entre -5 et 256
 
 print(id(a))
 print(id(b))
@@ -282,3 +282,83 @@ print (a == b)
 print (c == d)
 print (a is b) 
 print (c is d)#false car nombre non compris entre -5 et 256, bizarrement retourne True
+
+"""Mise en forme (formater ou concaténer) des chaines de caractères pour y insérer des variables """
+
+
+
+ #avec la méthode f-string
+
+a = "Dolly"
+b = f"Hello {a} !"
+print(b)
+
+#Pas besoin de conversion telle que str(a) ou str(b) 
+a = 3
+b = 5
+
+c = f"La multiplication de {a} par {b} est égale à {a * b}"
+print(c)
+
+
+#avec la méthode format
+
+age = 237 
+phrase = "J'ai {} ans".format(age)
+print(phrase)
+
+age = 97
+prenom = "albert" 
+phrase = "J'ai {} ans et je m'appelle {}".format(age, prenom)
+print(phrase)
+
+
+## avec indentifiant
+
+age = 375 
+phrase = "J'ai {a} ans".format(a=age)
+print(phrase)
+
+age = 237
+prenom = "glinglin" 
+phrase = "J'ai {} ans et je m'appelle {name}".format(age,name=prenom)
+print(phrase)
+
+ ## avec des indices
+age = 237
+prenom = "glinglin" 
+phrase = "J'ai {0} ans et je m'appelle {1}".format(age, prenom)
+print(phrase)
+
+## Résumé
+protocole = "https://"
+nom_du_site = "twitter"
+extension = "com"
+#avec opérateur +
+
+url = protocole + "www." + nom_du_site +"." + extension
+
+print(url)
+
+#avec méthode format
+
+url = "{}www.{}.{}".format(protocole, nom_du_site, extension)
+
+print(url)
+
+url = "{proto}www.{domaine}.{ext}".format(proto=protocole, domaine=nom_du_site, ext="com")
+
+print(url)
+
+#avec f-string = la plus simple
+
+url = f"{protocole}www.{nom_du_site}.{extension}"
+
+print(url) 
+
+#Particularité de la méthode format
+
+##constants.py
+
+
+##main.py
