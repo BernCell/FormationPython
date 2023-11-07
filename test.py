@@ -506,3 +506,23 @@ print("La fonct° randrange " + str(nbre)) # retourne un nombre aléatoire entre
 nbre = random.randrange(0, 511, 10)
 
 print("la fonc° randrange avec pas de 10 = " + str(nbre)) # retourne un nombre aléatoire entre 0 et 510 (511 étant exclu) avec un pas de 10  
+
+#Module os utilisé pour créer et supprimer des dossiers
+
+import os
+
+chemin = "/Users/berny/formationPython"
+
+dossier = os.path.join(chemin, "dossier", "test")
+
+print(dossier)
+
+#Fonction mkdir pour 1 dossier, Fonction makedirs pour 1 dossier et 1 ou plusieurs sous-dossiers
+
+## 1ère méthode structure conditionnelle
+if not os.path.exists(dossier): #si dossier n'existe pas
+    
+    os.makedirs(dossier)
+    
+## 2ème méthode 
+### os.makedirs(dossier, exist_ok=True)
