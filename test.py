@@ -526,3 +526,20 @@ if not os.path.exists(dossier): #si dossier n'existe pas
     
 ## 2ème méthode 
 ### os.makedirs(dossier, exist_ok=True)
+
+ #Fonction removedirs pour supprimer un dossier
+if os.path.exists(dossier):
+    os.removedirs(dossier)
+    
+#Fonctions dir et help
+
+import random
+
+#print(dir(random))
+
+help(random.randint)
+
+#Fonction pprint affiche les fonctions du module random par ordre alphabétique
+from pprint import pprint
+
+pprint(dir(random))
