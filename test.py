@@ -543,3 +543,17 @@ help(random.randint)
 from pprint import pprint
 
 pprint(dir(random))
+
+#Les objets "callable"
+
+import pprint
+
+print(callable(pprint)) #retourne False car le module pprint n'est pas appelable
+
+from pprint import pprint 
+print(callable(pprint)) #retourne True car la fonction pprint est appelable
+
+import os
+from pprint import pprint
+#print(os.name())#retourne 'str' object is not callable 
+print(os.name)
