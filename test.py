@@ -557,3 +557,61 @@ import os
 from pprint import pprint
 #print(os.name())#retourne 'str' object is not callable 
 print(os.name)
+
+"""Les Listes"""
+
+liste = [1, 2, 3, 4, 5]
+
+print(liste[2]) #Avec indice, retourne 3
+
+#liste = [250, "Python", True]
+
+#print(liste[2])
+
+# Pour définir une variable le terme 'list' est réservé, on peut utiliser 'liste' à la place
+
+##Ajouter et enlever des éléments à une liste
+###Pour ajouter 1 élément on utilise la méthode append
+
+liste.append(6)
+print(liste)
+###Pour ajouter plusieurs éléments on utilise la méthode extend
+
+liste.extend([7,8,9])
+print(liste)
+
+###Pour enlever 1 élément on utilise la méthode remove
+
+liste.remove(9)
+print(liste)
+
+##Récupérer un élément grace à son indice
+
+["Python", "C#", "Java"]
+#indice 0    1     2
+#       -3   -2   -1  indices négatifs
+
+##slice
+liste = ["Python", "C#", "Java", "JS", "Php"]
+
+print(liste[0:3])
+
+print(liste[1:2])
+
+print(liste[:]) #retourne la liste intégralement
+
+print(liste[:-1]) #exclusion du dernier indice, retourne jusqu'à l'avant dernier 
+
+print(liste[:-2]) #exclusion du dernier indice, retourne jusqu'à l'avant-avant dernier 
+
+print(liste[2:]) #retourne à partir de l'indice 2 jusqu'à la fin de la liste
+
+###Avec le pas :
+
+print(liste[::2]) #rien avant les 1ers ':' signifie qu'on part du début
+#rien avant le 2ème ':' signifie qu'on va jusqu'à la fin
+#le dernier nombre '2' signifie qu'on retourne un élément sur 2 dans la liste
+
+print(liste[1::2]) #on commence à l'indice 1 et on retourne un élément sur 2 
+
+print(liste[1:-2:2]) #on commence à l'indice 1 et on retourne un élément sur 2 en excluant les 2 derniers indices
