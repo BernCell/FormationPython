@@ -615,3 +615,50 @@ print(liste[::2]) #rien avant les 1ers ':' signifie qu'on part du début
 print(liste[1::2]) #on commence à l'indice 1 et on retourne un élément sur 2 
 
 print(liste[1:-2:2]) #on commence à l'indice 1 et on retourne un élément sur 2 en excluant les 2 derniers indices
+
+print(liste[::-1]) #On retourne en partant du début, on va jusqu'au dernier indice ... "-1" indique que la liste est inversée
+
+print(liste[1:-1]) #On retourne en excluant ce qu'il y a avant l'indice 1 et le dernier indice ... 
+
+##Autres méthodes sur les listes
+### Méthode index, permet de récupérer la position d'un élément dans une liste
+
+employes = ["Carlos", "Max", "Martine", "Patrick", "Alex"] #classés par ordre d'arrivée dans l'entreprise
+resultat = employes.index("Max")
+print(resultat)
+
+###Méthode count, permet de compter le nombre d'occurence dans une liste
+
+employes = ["Carlos", "Max", "Martine", "Patrick", "Alex", "Carlos"] #classés par ordre d'arrivée dans l'entreprise
+resultat = employes.count("Carlos")
+print("Carlos apparait " + str(resultat) + " fois dans la liste")
+
+###Méthode sort, permet de trier une liste par odre alphabétique
+
+employes = ["Carlos", "Max", "Martine", "Patrick", "Alex"] #classés par ordre d'arrivée dans l'entreprise
+resultat = employes.sort() 
+
+print(resultat) #retourne 'None'
+
+employes.sort() #trie directement notre liste sans passer par une variable intermédiaire pour stocker la valeur de fin
+print(employes) 
+
+#### Avec la fonction sorted(), on a besoin d'une variable pour récupérer le résultat
+
+employes = ["Carlos", "Max", "Martine", "Patrick", "Alex"]
+
+resultat = sorted(employes)
+
+print(resultat)
+
+#### la fonction reverse() agit comme sort(), pas besoin d'une variable pour récupérer le résultat. Le tri inversé se fait directement
+
+employes = ["Carlos", "Max", "Martine", "Patrick", "Alex"]
+
+print("L'ordre d'arrivée des employés dans l'entreprise est le suivant " + str(employes))
+
+employes.reverse()
+
+print("L'ordre d'arrivée inversé des employés est le suivant " + str(employes))
+
+## index, count, sort, sorted, reverse
