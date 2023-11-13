@@ -661,4 +661,44 @@ employes.reverse()
 
 print("L'ordre d'arrivée inversé des employés est le suivant " + str(employes))
 
-## index, count, sort, sorted, reverse
+### Résumé : index, count, sort, sorted, reverse
+
+#Enlever un élément de la liste grace à son index
+##Méthode pop
+employes = ["Carlos", "Max", "Martine", "Patrick", "Alex"]
+
+employes.pop(-1) # on enlève le dernier ou .pop(4) si on sait qu'il y a 5 éléments dans la liste
+
+print(employes)
+
+employes = ["Carlos", "Max", "Martine", "Patrick", "Alex"]
+
+element = employes.pop(-1)
+
+print("L'élément qui a été enlevé est : " + str(element))
+
+##Pour enlever tous les éléments de la liste
+#Méthode clear vide notre liste
+
+employes = ["Carlos", "Max", "Martine", "Patrick", "Alex"]
+
+employes.clear()
+
+print(employes)
+
+#Méthode join pour joindre les éléments d'une liste
+
+liste = ["Python", "est", "un", "tout", "nouveau", "langage", "pour", "moi"]
+
+resultat= " ".join(liste)
+
+print(resultat)
+
+resultat= "\n".join(liste)
+
+print(resultat)
+
+liste = ["Python", "est", "un", "tout", "nouveau", "langage", "pour", "moi"]
+
+print(liste)
+
