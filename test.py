@@ -120,7 +120,8 @@ print("3".join(list))
 
 #Remplir de zéros
 
-a="5".zfill(2)
+a="5".zfill(2) 
+
 print(a)
 a="5".zfill(4)
 print(a)
@@ -702,3 +703,24 @@ liste = ["Python", "est", "un", "tout", "nouveau", "langage", "pour", "moi"]
 
 print(liste)
 
+## Séparer une chaine de caractères
+###Méthode split 
+
+courses = "Citron, Oranges, Spiruline, Huile de Foie de Morue, Huile de Ricin, Dentifrice"
+
+
+courses = courses.split(", ") 
+
+print(courses)
+
+#Opérateurs d'appartenance
+## in, not in
+
+users = ["Pierre", "Paul", "Jacques", "Marie"]
+if "Paul" in users:
+    print("Bonjour Paul, comment vas-tu ?")
+    
+if "Paul" in users:
+    users.remove("Paul")
+    print(users)
+    
