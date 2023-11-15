@@ -808,3 +808,33 @@ print(liste)
 titre = "around the world in a day".title() # on place la chaine de caractères immuable dans une variable intermédiaire sinon on ne pourra pas traiter la méthode title()
 
 print(titre)
+
+
+""" Fonctions supplémentaires """
+
+#Fonction len
+## Avec chaine de caractères
+
+print(len("Javascript")) # retourne 10, le nombre de caractères à l'intérieur du mot Javascript
+
+## Avec liste
+
+print(len([1, 2 , 3])) # retourne 3, le nombre d 'éléments contenus dans la liste 
+
+#Fonctions round, min, max
+
+print(round(1.2)) # arrondi à 1
+
+print(round(1.8)) # arrondi à 2
+
+
+## avec nombres
+print("la plus petite valeur de la liste est : " + str(min([1, 2 , 3]))) # retourne la plus petite valeur de la liste
+
+print("la plus grande valeur de la liste est : " +  str(max([1, 2 , 3]))) # retourne la plus grande valeur de la liste
+
+## avec chaine de caractères
+print("la plus petite valeur de la liste est : " + (min("abcdz"))) # retourne la plus petite valeur de la liste
+
+print("la plus grande valeur de la liste est : " +  (max("abcdz"))) # retourne la plus grande valeur de la liste
+
