@@ -724,3 +724,57 @@ if "Paul" in users:
     users.remove("Paul")
     print(users)
     
+#Listes imbriquées
+
+
+liste = ["Python", ["Java", "C++", ["C"]], ["Ruby"]]
+
+#Pour retourner Ruby 
+
+print (liste[2]) #retourne la liste Ruby
+
+
+print(liste[1][1]) #retourne C++
+
+
+print(liste[1][2]) #retourne la liste C
+
+print(liste[1][-1]) #retourne la liste C
+
+print(liste[1][-1][0]) #retourne C
+
+print(liste[0][0]) #retourne P, 1er élément de Python
+
+print(liste[1][0][0]) #retourne J, 1er élément de Java
+
+print(liste[2][0][0]) #retourne R, 1er élément de Ruby
+
+## Une chaine de caractères est aussi une liste :
+
+print(liste[2][0][0:2]) #retourne Ru grâce au slice ':' qui sont les 2 premières lettres du 1er élément de Ruby
+
+print(liste[2][0][2:4]) #retourne by grâce au slice ':' qui sont les 2 dernières lettres du 1er élément de Ruby
+
+"""Les erreurs communes aux débutants"""
+
+#1/les parenthèses, au lieu des crochets, utilisées pour récupérer un élément d'une liste ( ou tuple)
+
+#2/l'utilisation directe de la valeur qu'on souhaite enlever et non de l'indice ...Par exemple liste = [3, 1, 9]  => pour enlever la valeur '3' on écrit liste.remove(3) et non liste.remove(0)
+liste = [3, 1, 9, 3] 
+
+# faux liste[0].remove()
+
+liste.remove(3) #enlève la 1ère occurence et non le 2ème '3'
+
+print(liste)
+
+liste = [3, 1, 9]
+#Pour enlever une valeur grace à son indice, on utilise la fonction pop ... pour enlever 3 par exemple on utilsise l'indice 0
+
+liste.pop(0)
+
+print(liste)
+
+"""Les méthodes et autres fonctions utiles"""
+
+#La diff entre méthodes et fonctions
