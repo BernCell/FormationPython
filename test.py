@@ -778,3 +778,33 @@ print(liste)
 """Les méthodes et autres fonctions utiles"""
 
 #La diff entre méthodes et fonctions
+
+## Une méthode est une fonction qui appartient à un objet
+
+## fonction sorted(liste) != méthode liste.sort() , les 2 trient une liste mais
+
+liste = [5, 3, 9, 7, 1]
+
+sorted(liste) 
+print(liste)
+
+liste = sorted(liste) 
+print(liste)
+
+liste = [5, 3, 9, 7, 1]
+liste.sort()
+print(liste)
+
+# Les objets muables et immuables (ou mutables et immutables)
+
+## Objets Muables = listes, dictionnaires, sets
+
+## Objets Immuables = chaines de caractères, nombres
+
+liste.append(6) # ajoute directement 6 à la liste grace à la méthode append()car une liste est muable
+
+print(liste)
+
+titre = "around the world in a day".title() # on place la chaine de caractères immuable dans une variable intermédiaire sinon on ne pourra pas traiter la méthode title()
+
+print(titre)
