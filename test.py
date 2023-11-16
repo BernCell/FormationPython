@@ -838,3 +838,19 @@ print("la plus petite valeur de la liste est : " + (min("abcdz"))) # retourne la
 
 print("la plus grande valeur de la liste est : " +  (max("abcdz"))) # retourne la plus grande valeur de la liste
 
+## Fonction sum() à n'utiliser qu'avec des listes numériques
+
+a = sum([10, 20, 25])
+
+print("La somme de la liste a = " + str(a))
+
+## Fonction range() à utiliser pour les boucles 
+a = 1
+for loop in range(5):
+    print(a)
+   
+    
+a = 0
+    
+for loop in range(2, 5):
+    print(a) # retourne 0 de la 2ème à la 4ème fois 
