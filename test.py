@@ -857,12 +857,19 @@ for loop in range(2, 5):
     
 ### Exercice Mot de Passe
 
-# mdp = input("Entrez un mot de passe (min 8 caractères) : ")
+mdp = input("Entrez un mot de passe (min 8 caractères) : ")
 
 mdp_trop_court = "votre mot de passe est trop court."
+if len(mdp) == 0: #aucun mot de passe rentré
+    mdp_trop_court = mdp_trop_court.upper()
+    print(mdp_trop_court)
+elif len(mdp) > 0 and len(mdp) < 8:  
+    mdp_trop_court = mdp_trop_court.capitalize()
+    print(mdp_trop_court)
+elif len(mdp) >= 8 and print(type(mdp)) is not str:
+    print("Votre mot de passe ne contint que des nombres.")
 
-mdp_trop_court = mdp_trop_court.upper()
 
-print(mdp_trop_court)
+
     
     
