@@ -853,4 +853,16 @@ for loop in range(5):
 a = 0
     
 for loop in range(2, 5):
-    print(a) # retourne 0 de la 2ème à la 4ème fois 
+    print(a) # retourne 0 de la 2ème à la 4ème fois le nombre 5 dans la fonction range(2, 5) est exclus
+    
+### Exercice Mot de Passe
+
+# mdp = input("Entrez un mot de passe (min 8 caractères) : ")
+
+mdp_trop_court = "votre mot de passe est trop court."
+
+mdp_trop_court = mdp_trop_court.upper()
+
+print(mdp_trop_court)
+    
+    
