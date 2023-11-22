@@ -887,7 +887,25 @@ for lettre in "Python":
     
 for i in range(4):
     print("Bring the noise")
+    
+    
+# La Boucle while
+## while condition:
+##    print("Bonjour !")
+### Une boucle while est éxécutée tant qu'une condition est vraie
+### Attention aux boucles infinies
 
+i = 0 #initialisation de la variable
+
+while i < 4:
+    print("Bring The NoiseGate !!!")
+    i += 1 # Placer une limite obligatoire pour ne pas créer une boucle infinie
+
+continuer = "o"
+while continuer =="o":
+    print("On continue ...")
+    continuer = input("Voulez-vous continuer ? o/n ")
+    
 
 
     
