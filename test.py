@@ -572,17 +572,16 @@ print(liste[2]) #Avec indice, retourne 3
 # Pour définir une variable le terme 'list' est réservé, on peut utiliser 'liste' à la place
 
 ##Ajouter et enlever des éléments à une liste
-###Pour ajouter 1 élément on utilise la méthode append
 
+###Pour ajouter 1 élément on utilise la méthode append
 liste.append(6)
 print(liste)
-###Pour ajouter plusieurs éléments on utilise la méthode extend
 
+###Pour ajouter plusieurs éléments on utilise la méthode extend
 liste.extend([7,8,9])
 print(liste)
 
 ###Pour enlever 1 élément on utilise la méthode remove
-
 liste.remove(9)
 print(liste)
 
@@ -930,3 +929,39 @@ for element in liste:
     if element.isdigit():
         break #Dès qu'un élément est un nombre on sort de la boucle
     print(element)
+    
+    
+#Comprehension de liste
+
+liste = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5 ]
+nbre_positifs = []
+nbre_negatifs = []
+print(liste)
+
+for i in liste:
+    if i > 0:
+        nbre_positifs.append(i)# la fonction append() ajoute un élément à la liste
+    elif i== 0:
+        print("Nombre ni positif ni négatif : " + str(i))
+    else:
+        nbre_negatifs.append(i)      
+        
+print("nombre positifs :" + str(nbre_positifs))
+print("nombre negatifs :" + str (nbre_negatifs))
+
+# En compréhension de liste, on simplifie cette opération :
+
+liste = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5 ]
+
+nbre_positifs = [i for i in liste if i > 0  ]
+
+print("nombre positifs bis :" + str(nbre_positifs))
+
+nbre_negatifs = [i for i in liste if i < 0]
+
+print("nombre negatifs bis :" + str (nbre_negatifs))
+
+nbre_positifs = [i * 2 for i in liste if i > 0 ]
+
+print("nombre positifs multipliés par 2 :" + str(nbre_positifs))
+
