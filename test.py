@@ -901,12 +901,32 @@ while i < 4:
     print("Bring The NoiseGate !!!")
     i += 1 # Placer une limite obligatoire pour ne pas créer une boucle infinie
 
-continuer = "o"
-while continuer =="o":
-    print("On continue ...")
-    continuer = input("Voulez-vous continuer ? o/n ")
+# continuer = "o"
+# while continuer =="o":
+#     print("On continue ...")
+#     continuer = input("Voulez-vous continuer ? o/n ")
     
 
+# Modifier éxécution d'une boucle avec continue et break
+## continue fait passer la boucle directement à la prochaine itération
+##break arrête l'éxécution de la boucle 
 
+
+liste = ["1", "5", "17", "Paul", "John", "Georges", "Ringo" ,"4", "The Beatles"]
+
+print(liste)
+
+for element in liste:
+    if element.isdigit():
+        continue #Dès que l'élément identifié est un nombre on s'arrête de lister les éléments 
+    print(element)
     
-    
+
+liste = ["George Martin", "Brian Epstein", "1", "4", "64", "Paul", "John", "Georges", "Ringo" ,"4", "The Beatles"]
+
+print(liste)
+
+for element in liste:
+    if element.isdigit():
+        break #Dès qu'un élément est un nombre on sort de la boucle
+    print(element)
