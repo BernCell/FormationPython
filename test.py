@@ -965,3 +965,92 @@ nbre_positifs = [i * 2 for i in liste if i > 0 ]
 
 print("nombre positifs multipliés par 2 :" + str(nbre_positifs))
 
+###Exos sur les compréhension de liste
+
+
+#### EXO 1
+
+
+nombres = [1, 21, 5, 44, 4, 9, 5, 83, 29, 15, 31, 25, 38]
+
+nbr_pairs = []
+
+for i in nombres:
+    if i % 2 == 0:
+        nbr_pairs.append(i)
+
+print("liste des nombres pairs : " + str(nbr_pairs))
+
+### Simplification  en compréhension de liste
+
+nombres = [1, 21, 5, 44, 4, 9, 5, 83, 29, 15, 31, 25, 38]
+
+nbr_pairs = [i for i in nombres if i % 2 == 0 ]
+
+print(" Compréhension de liste des nombres pairs : " + str(nbr_pairs) )
+
+nbr_pairs.sort()
+
+print("Avec la méthode nbr_pairs.sort() : " + str(nbr_pairs))
+
+nbr_pairs = sorted(nbr_pairs)
+
+print("Avec la méthode nbr_pairs = sorted(nbr_pairs) : " + str(nbr_pairs)) 
+
+###################################
+##### Compréhension de liste ######
+
+#### EXO 2 
+#### Opération sans compréhension de liste
+nombres = range(-10, 10)
+
+nombres_positifs = []
+
+for i in nombres:
+    if i > 0:
+        nombres_positifs.append(i)
+print("Nombres positifs : " + str(nombres_positifs))
+#### Opération avec compréhension de liste
+
+nombres = range(-10, 10) # avec la méthode range() -10 et 10 sont exclus
+
+nombres_positifs = [i for i in nombres if i > 0]
+
+print("Nombres positifs avec comprehension de liste : " + str(nombres_positifs))
+
+#### EXO 3
+#### Opération sans compréhension de liste
+nombres = range(5) 
+nbr_double = []
+
+for i in nombres:
+    nbr_double.append(i * 2)
+print("Liste normale: " + str(nombres))
+print("Liste multipliée par 2: " + str(nbr_double))
+
+
+#### Opération avec compréhension de liste
+nombres = range(5)# 5 est exclu
+nbr_double = [i * 2 for i in nombres]
+
+print("Compréhension de liste multipliée par 2: " + str(nbr_double))
+
+#### EXO 4
+#### Opération sans compréhension de liste
+nombres = range(10) 
+nbr_inverse = []
+
+for i in nombres:
+    if i % 2 == 0:
+        nbr_inverse.append(i)
+    else:
+        nbr_inverse.append(-i) #On inverse tous les nombres 
+        
+print("Liste avec inversion : " + str(nbr_inverse))
+
+
+#### Opération avec compréhension de liste
+nombres = range(10) 
+nbr_inverse = [ i if i % 2 == 0  else -i for i in nombres ]
+
+print("Compréhension de liste avec inversion: " + str(nbr_inverse))
