@@ -199,11 +199,11 @@ a = "image.png".startswith("image")
 
 print(a)
 
-a = "image.png".startswith("fichier") 
+a = "image.png".startswith("fichier") #alse
 
 print(a)
 
-a = "image.png".endswith("png") 
+a = "image.png".endswith("png") #True
 
 print(a)
 
@@ -292,7 +292,7 @@ print (c is d)#false car nombre non compris entre -5 et 256, bizarrement retourn
 
 a = "Dolly"
 b = f"Hello {a} !"
-print(b)
+print("Concaténation avec méthode f-string: " +b)
 
 #Pas besoin de conversion telle que str(a) ou str(b) 
 a = 3
@@ -1010,8 +1010,8 @@ for i in nombres:
     if i > 0:
         nombres_positifs.append(i)
 print("Nombres positifs : " + str(nombres_positifs))
-#### Opération avec compréhension de liste
 
+#### Opération avec compréhension de liste
 nombres = range(-10, 10) # avec la méthode range() -10 et 10 sont exclus
 
 nombres_positifs = [i for i in nombres if i > 0]
@@ -1051,6 +1051,28 @@ print("Liste avec inversion : " + str(nbr_inverse))
 
 #### Opération avec compréhension de liste
 nombres = range(10) 
-nbr_inverse = [ i if i % 2 == 0  else -i for i in nombres ]
+nbr_inverse = [ i if i % 2 == 0  else -i for i in nombres ] # quand il y a un else la condition se retrouve au début suivi du else
 
 print("Compréhension de liste avec inversion: " + str(nbr_inverse))
+
+### Exo 5
+### Afficher 10 utilisateurs
+### Ma solution avec la boucle while
+user = "utilisateur"
+i = 1 #initialisation de la variable
+
+while i <= 10:
+    print(user.title() + " " + str(i))
+    i += 1 # Placer une limite obligatoire pour ne pas créer une boucle infinie
+    
+### Autre solution bcp + simple avec boucle for et méthode de concaténation f-string 
+
+for i in range(10):
+    print(f"Utilisateur {i+1}") # i+1 pour commencer à 1 et non à 0
+    
+### Autre solution bcp + simple avec boucle for et méthode de concaténation f-string 
+
+for i in range(1, 11): # le 11 est exclu 
+    print(f"Utilisateur {i}")
+    
+
