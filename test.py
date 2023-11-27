@@ -602,7 +602,7 @@ print(liste[:]) #retourne la liste intégralement
 
 print(liste[:-1]) #exclusion du dernier indice, retourne jusqu'à l'avant dernier 
 
-print(liste[:-2]) #exclusion du dernier indice, retourne jusqu'à l'avant-avant dernier 
+print(liste[:-2]) #exclusion du dernier indice, retourne jusqu'à l'antépénultième
 
 print(liste[2:]) #retourne à partir de l'indice 2 jusqu'à la fin de la liste
 
@@ -1065,7 +1065,7 @@ while i <= 10:
     print(user.title() + " " + str(i))
     i += 1 # Placer une limite obligatoire pour ne pas créer une boucle infinie
     
-### Autre solution bcp + simple avec boucle for et méthode de concaténation f-string 
+### Autre solution bcp + simple avec boucle for et méthode de concaténation f-string hj
 
 for i in range(10):
     print(f"Utilisateur {i+1}") # i+1 pour commencer à 1 et non à 0
@@ -1075,4 +1075,27 @@ for i in range(10):
 for i in range(1, 11): # le 11 est exclu 
     print(f"Utilisateur {i}")
     
+### Exo 6
+### Afficher une chaine de caractères à l'envers
+## solution 1
+mot = "Python" 
+
+for i in reversed(mot):
+    print(i)
+
+# solution 2
+mot_invert = " ".join(reversed(mot))
+
+print(mot_invert) #retourne n o h t y P
+
+##solution 3
+mot_invert2 = []
+for lettre in reversed(mot):
+    mot_invert2.append(lettre)
+print(mot_invert2) # retourne ['n', 'o', 'h', 't', 'y', 'P']
+    
+
+
+
+
 
