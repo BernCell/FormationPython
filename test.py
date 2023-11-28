@@ -1094,6 +1094,31 @@ for lettre in reversed(mot):
     mot_invert2.append(lettre)
 print(mot_invert2) # retourne ['n', 'o', 'h', 't', 'y', 'P']
     
+### Exo 7
+### Sortir d'une boucle while
+
+## 1ere méthode
+
+continuer = "o"
+
+while continuer == "o":
+    print("On continue !")
+    continuer = input("Voulez-vous continuer ? o/n: ")
+    
+## 2eme méthode
+
+encore = "o"
+
+while encore == "o":
+    print("On continue !")
+    result = input("Voulez-vous continuer ? o/n: ")
+    if result != "o":
+        print("Arrêt !!!")
+        break
+    
+    
+    
+        
 
 
 
