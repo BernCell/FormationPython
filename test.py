@@ -1092,7 +1092,7 @@ print(mot_invert) #retourne n o h t y P
 mot_invert2 = []
 for lettre in reversed(mot):
     mot_invert2.append(lettre)
-print(mot_invert2) # retourne ['n', 'o', 'h', 't', 'y', 'P']
+print(mot_invert2)  # retourne ['n', 'o', 'h', 't', 'y', 'P']
     
 
 
