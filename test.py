@@ -1099,24 +1099,62 @@ print(mot_invert2) # retourne ['n', 'o', 'h', 't', 'y', 'P']
 
 ## 1ere méthode
 
-continuer = "o"
+# continuer = "o"
 
-while continuer == "o":
-    print("On continue !")
-    continuer = input("Voulez-vous continuer ? o/n: ")
+# while continuer == "o":
+#     print("On continue !")
+#     continuer = input("Voulez-vous continuer ? o/n: ")
     
 ## 2eme méthode
 
-encore = "o"
+# encore = "o"
 
-while encore == "o":
-    print("On continue !")
-    result = input("Voulez-vous continuer ? o/n: ")
-    if result != "o":
-        print("Arrêt !!!")
-        break
+# while encore == "o":
+#     print("On continue !")
+#     result = input("Voulez-vous continuer ? o/n: ")
+#     if result != "o":
+#         print("Arrêt !!!")
+#         break
     
     
+# Exo 8 --- La calculatrice 
+
+nbr_1=nbr_2 = 0
+
+
+# print(type(nbr_1))
+# print(type(nbr_2))
+nbr_1 = input("Entrez un 1er nombre compris entre 0 et 9 : ")
+
+while nbr_1.isdigit() == False:
+        print("Vous avez renseigné un 1er nombre invalide")
+        nbr_1 = input("Entrez un 1er nombre compris entre 0 et 9 : ")
+        
+nbr_2 = input("Entrez un 2eme nombre compris entre 0 et 9 : ")
+
+while nbr_2.isdigit() == False:
+    print("Vous avez renseigné un 1er nombre invalide")
+    nbr_2 = input("Entrez un 2eme nombre compris entre 0 et 9 : ")
+
+
+    
+while int(nbr_1) < 0 or int(nbr_1) > 9:
+        print("Ceci n'est pas un nombre compris entre 0 et 9 !!!")
+        nbr_1 = input("Entrez à nouveau un 1er nombre compris entre 0 et 9 : ")
+
+        
+while int(nbr_2) < 0 or int(nbr_2) > 9:
+         print("Ceci n'est pas un nombre compris entre 0 et 9 !!!")
+         nbr_2 = input("Entrez à nouveau un 2eme nombre compris entre 0 et 9 : ") 
+      
+print("L'addition de ces 2 nombres est  : " + str( int(nbr_1) + int(nbr_2)))
+    
+
+
+    # nbr_1 = input(" Entrez encore un 1er nombre compris entre 0 et 9 : ")
+    # nbr_2 = input("Entrez un 2eme nombre compris entre 0 et 9 : ")   
+    
+
     
         
 
