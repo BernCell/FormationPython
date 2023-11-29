@@ -133,15 +133,15 @@ for i in range(10):
     print(str(i).zfill(4))    
     
     """Méthodes "is" (lower/upper/digit/title) Chaine de Caractères"""
-a =  "BONJOUR".islower()
+a =  "BONJOUR".islower()# retourne False ou True
 
 print(a)
 
-a =  "bonjour".islower()
+a =  "bonjour".islower() # retourne True
 
 print(a)
 
-a =  "BONJOUR".isupper()
+a =  "BONJOUR".isupper() # Retourne true
 
 print(a)
 
@@ -259,8 +259,8 @@ print (a is b) # False car l'adresse de l'objet en mémoire de a et b est diffé
 print(id(a))
 print(id(b))
 
-a =10
-b=10
+a = 10
+b = 10
 print (a == b)
 print (a is b) #true car case mémoire équivalente car nombre compris entre -5 et 256
 
@@ -1117,7 +1117,7 @@ print(mot_invert2) # retourne ['n', 'o', 'h', 't', 'y', 'P']
 #         break
     
     
-# Exo 8 --- La calculatrice
+# Exo 8 --- La calculatrice avec gestion d'erreurs
 ## méthode 1 (ma méthode) 
 
 # nbr_1=nbr_2 = 0
@@ -1148,16 +1148,70 @@ print(mot_invert2) # retourne ['n', 'o', 'h', 't', 'y', 'P']
 # print("L'addition de ces 2 nombres est  : " + str( int(nbr_1) + int(nbr_2)))
     
 
-## Méthode 2 
+## Méthode 2 Calculatrice avec gestion d'erreurs
 
-a = b = ""
+# a = b = ""
 
-while not (a.isdigit() and b.isdigit() ):
-    a = input("Entrez le 1er nombre : ")
-    b = input("Entrez le 2eme nombre : ")
-    if not (a.isdigit() and b.isdigit()):
-        print("Veuillez rentrer 2 nombres valides")
-print("L'addition des 2 nombres = " + str(int(a) + int(b)))
+# while not (a.isdigit() and b.isdigit() ): # Tant a et b ne contiennent pas de nombre
+#     a = input("Entrez le 1er nombre : ")
+#     b = input("Entrez le 2eme nombre : ")
+#     if not (a.isdigit() and b.isdigit()):
+#         print("Veuillez rentrer 2 nombres valides")
+# print("L'addition des 2 nombres = " + str(int(a) + int(b)))
+
+# solution avec f-strings
+# print(f"Solution avec f-strings: L'addition de {a} + {b} est égale à {int(a) + int(b)}")
+
+
+# Exo 9 Liste de courses  
+## Ma solution :
+
+liste = ["Savon", "Lessive", "Fruits", "Légumes", "Viande", "Poisson", "Yaourts", "Chocolat Noir", "Gruyère Rapé", "Pâtes", "Riz", "Cacahuètes" ]
+print(liste)
+choice = ""
+
+
+while not choice.isdigit():
+    print("Choisissez parmi les 5 options suivantes : ")
+    print("1: Ajouter un élément à la liste : ")
+
+    print("2: Retirer un élément à la liste : ")
+    print("3: Afficher la liste : ")
+    print("4: Vider la liste : ")
+    print("5: Quitter")
+    
+    choice = input("Votre choix : ")
+    
+    if not (int(choice) >= 1 and int(choice) <= 5):
+        print("Veuillez rentrer un nombre entre 1 et 5")
+
+if choice == "1":
+    add_element = input(" Ajoutez un élément à la liste : ")
+    while add_element in liste: # On demande à ajouter un nouvel élement tant que cet élement n"est pas déjà dans la liste
+        add_element = input(" Ajoutez un élément absent de la liste : ")
+    liste.append(add_element)
+        
+    print("La nouvelle liste est : " + str(liste))
+    
+elif choice == "2":
+    remove_element = input("Retirez un élément à la liste : ")
+    while remove_element not in liste: # Tant l'élément n'existe pas dans la liste on redemande l'élément à enlever
+        remove_element = input("Choisissez de retirer un élément présent dans la liste : ")
+    liste.remove(remove_element)
+    print("La nouvelle liste est : " + str(liste))
+elif choice == "3":
+    print("La liste de courses originelle est : " + str(liste))
+elif choice  == "4":
+    liste = []
+    print("La liste est vide " + str(liste))
+else:
+    print("Merci de votre visite, au revoir")
+    
+       
+
+        
+
+
 
   
     
