@@ -1117,42 +1117,49 @@ print(mot_invert2) # retourne ['n', 'o', 'h', 't', 'y', 'P']
 #         break
     
     
-# Exo 8 --- La calculatrice 
+# Exo 8 --- La calculatrice
+## méthode 1 (ma méthode) 
 
-nbr_1=nbr_2 = 0
+# nbr_1=nbr_2 = 0
 
+# nbr_1 = input("Entrez un 1er nombre compris entre 0 et 9 : ")
 
-# print(type(nbr_1))
-# print(type(nbr_2))
-nbr_1 = input("Entrez un 1er nombre compris entre 0 et 9 : ")
-
-while nbr_1.isdigit() == False:
-        print("Vous avez renseigné un 1er nombre invalide")
-        nbr_1 = input("Entrez un 1er nombre compris entre 0 et 9 : ")
+# while nbr_1.isdigit() == False:
+#         print("Vous avez renseigné un 1er nombre invalide")
+#         nbr_1 = input("Entrez un 1er nombre compris entre 0 et 9 : ")
         
-nbr_2 = input("Entrez un 2eme nombre compris entre 0 et 9 : ")
+# nbr_2 = input("Entrez un 2eme nombre compris entre 0 et 9 : ")
 
-while nbr_2.isdigit() == False:
-    print("Vous avez renseigné un 1er nombre invalide")
-    nbr_2 = input("Entrez un 2eme nombre compris entre 0 et 9 : ")
+# while nbr_2.isdigit() == False:
+#     print("Vous avez renseigné un 1er nombre invalide")
+#     nbr_2 = input("Entrez un 2eme nombre compris entre 0 et 9 : ")
 
 
     
-while int(nbr_1) < 0 or int(nbr_1) > 9:
-        print("Ceci n'est pas un nombre compris entre 0 et 9 !!!")
-        nbr_1 = input("Entrez à nouveau un 1er nombre compris entre 0 et 9 : ")
+# while int(nbr_1) < 0 or int(nbr_1) > 9:
+#         print("Ceci n'est pas un nombre compris entre 0 et 9 !!!")
+#         nbr_1 = input("Entrez à nouveau un 1er nombre compris entre 0 et 9 : ")
 
         
-while int(nbr_2) < 0 or int(nbr_2) > 9:
-         print("Ceci n'est pas un nombre compris entre 0 et 9 !!!")
-         nbr_2 = input("Entrez à nouveau un 2eme nombre compris entre 0 et 9 : ") 
+# while int(nbr_2) < 0 or int(nbr_2) > 9:
+#          print("Ceci n'est pas un nombre compris entre 0 et 9 !!!")
+#          nbr_2 = input("Entrez à nouveau un 2eme nombre compris entre 0 et 9 : ") 
       
-print("L'addition de ces 2 nombres est  : " + str( int(nbr_1) + int(nbr_2)))
+# print("L'addition de ces 2 nombres est  : " + str( int(nbr_1) + int(nbr_2)))
     
 
+## Méthode 2 
 
-    # nbr_1 = input(" Entrez encore un 1er nombre compris entre 0 et 9 : ")
-    # nbr_2 = input("Entrez un 2eme nombre compris entre 0 et 9 : ")   
+a = b = ""
+
+while not (a.isdigit() and b.isdigit() ):
+    a = input("Entrez le 1er nombre : ")
+    b = input("Entrez le 2eme nombre : ")
+    if not (a.isdigit() and b.isdigit()):
+        print("Veuillez rentrer 2 nombres valides")
+print("L'addition des 2 nombres = " + str(int(a) + int(b)))
+
+  
     
 
     
