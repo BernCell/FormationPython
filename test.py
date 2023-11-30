@@ -1172,6 +1172,7 @@ choice = ""
 
 
 while not choice.isdigit():
+    print("Les lettres ne sont pas un élément valide !!!")
     print("Choisissez parmi les 5 options suivantes : ")
     print("1: Ajouter un élément à la liste : ")
 
@@ -1180,34 +1181,39 @@ while not choice.isdigit():
     print("4: Vider la liste : ")
     print("5: Quitter")
     
+# while choice != 5:
     choice = input("Votre choix : ")
     
-    if not (int(choice) >= 1 and int(choice) <= 5):
-        print("Veuillez rentrer un nombre entre 1 et 5")
+while not (int(choice) >= 1 and int(choice) <=4) and int(choice) !=5:
+            choice = input("Veuillez rentrer un nombre entre 1 et 5 :")
 
 if choice == "1":
-    add_element = input(" Ajoutez un élément à la liste : ")
+    add_element = input("Ajoutez un élément à la liste : ")
     while add_element in liste: # On demande à ajouter un nouvel élement tant que cet élement n"est pas déjà dans la liste
-        add_element = input(" Ajoutez un élément absent de la liste : ")
+        add_element = input("Ajoutez un élément absent de la liste : ")
     liste.append(add_element)
+    print("L'élément " + str(add_element) + " a bien été ajouté à la liste !" )  
+    print("La nouvelle liste est donc : " + str(liste))
+         
         
-    print("La nouvelle liste est : " + str(liste))
-    
-elif choice == "2":
+if choice == "2":
     remove_element = input("Retirez un élément à la liste : ")
     while remove_element not in liste: # Tant l'élément n'existe pas dans la liste on redemande l'élément à enlever
         remove_element = input("Choisissez de retirer un élément présent dans la liste : ")
     liste.remove(remove_element)
     print("La nouvelle liste est : " + str(liste))
-elif choice == "3":
-    print("La liste de courses originelle est : " + str(liste))
-elif choice  == "4":
+if choice == "3":
+        print("La liste de courses originelle est : " + str(liste))
+if choice  == "4":
     liste = []
     print("La liste est vide " + str(liste))
-else:
-    print("Merci de votre visite, au revoir")
-    
-       
+
+
+print("Merci de votre visite, Au revoir")
+
+# break
+    # print("vous avez quitté le questionnaire !!!")        
+          
 
         
 
