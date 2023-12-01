@@ -1166,55 +1166,69 @@ print(mot_invert2) # retourne ['n', 'o', 'h', 't', 'y', 'P']
 # Exo 9 Liste de courses  
 ## Ma solution :
 
-liste = ["Savon", "Lessive", "Fruits", "Légumes", "Viande", "Poisson", "Yaourts", "Chocolat Noir", "Gruyère Rapé", "Pâtes", "Riz", "Cacahuètes" ]
-print(liste)
-choice = ""
+# liste = ["Savon", "Lessive", "Fruits", "Légumes", "Viande", "Poisson", "Yaourts", "Chocolat Noir", "Gruyère Rapé", "Pâtes", "Riz", "Cacahuètes" ]
+# print(liste)
+# choice = ""
 
 
-while not choice.isdigit():
-    print("Les lettres ne sont pas un élément valide !!!")
-    print("Choisissez parmi les 5 options suivantes : ")
-    print("1: Ajouter un élément à la liste : ")
+# while not choice.isdigit():
+#     print("Les lettres ne sont pas admises !!!")
+#     print("Choisissez parmi les 5 options suivantes : ")
+#     print("1: Ajouter un élément à la liste : ")
 
-    print("2: Retirer un élément à la liste : ")
-    print("3: Afficher la liste : ")
-    print("4: Vider la liste : ")
-    print("5: Quitter")
+#     print("2: Retirer un élément à la liste : ")
+#     print("3: Afficher la liste : ")
+#     print("4: Vider la liste : ")
+#     print("5: Quitter")
     
-# while choice != 5:
-    choice = input("Votre choix : ")
+# # while choice != 5:
+#     choice = input("Votre choix : ")
     
-while not (int(choice) >= 1 and int(choice) <=4) and int(choice) !=5:
-            choice = input("Veuillez rentrer un nombre entre 1 et 5 :")
+# while not (int(choice) >= 1 and int(choice) <=4) and int(choice) !=5:
+#         choice = input("Veuillez rentrer un nombre entre 1 et 5 :")
 
-if choice == "1":
-    add_element = input("Ajoutez un élément à la liste : ")
-    while add_element in liste: # On demande à ajouter un nouvel élement tant que cet élement n"est pas déjà dans la liste
-        add_element = input("Ajoutez un élément absent de la liste : ")
-    liste.append(add_element)
-    print("L'élément " + str(add_element) + " a bien été ajouté à la liste !" )  
-    print("La nouvelle liste est donc : " + str(liste))
-         
-        
-if choice == "2":
-    remove_element = input("Retirez un élément à la liste : ")
-    while remove_element not in liste: # Tant l'élément n'existe pas dans la liste on redemande l'élément à enlever
-        remove_element = input("Choisissez de retirer un élément présent dans la liste : ")
-    liste.remove(remove_element)
-    print("La nouvelle liste est : " + str(liste))
-if choice == "3":
-        print("La liste de courses originelle est : " + str(liste))
-if choice  == "4":
-    liste = []
-    print("La liste est vide " + str(liste))
+# if choice == "1":
+#     print(liste)
+#     add_element = input("Ajoutez un élément à la liste : ")
+#     while add_element in liste: # On demande à ajouter un nouvel élement tant que cet élement n"est pas déjà dans la liste
+#         add_element = input("Ajoutez un élément absent de la liste : ")
+#     liste.append(add_element)
+#     print("L'élément " + str(add_element) + " a bien été ajouté à la liste !" )  
+#     print("La nouvelle liste est donc : " + str(liste))    
+                    
+                    
+# if choice == "2":
+#     print(liste)
+#     remove_element = input("Retirez un élément à la liste : ")
+#     while remove_element not in liste: # Tant l'élément n'existe pas dans la liste on redemande l'élément à enlever
+#         remove_element = input("Choisissez de retirer un élément présent dans la liste : ")
+#     liste.remove(remove_element)
+#     print("La nouvelle liste est : " + str(liste))                
+                    
+# if choice == "3":
+#     print("La liste de courses originelle est : " + str(liste))
+                    
+# if choice  == "4":
+#     liste = []
+#     print("La liste est vide " + str(liste))    
+#             # continue                
 
 
-print("Merci de votre visite, Au revoir")
+# print("Merci de votre visite, Au revoir")
 
-# break
-    # print("vous avez quitté le questionnaire !!!")        
+## Une solution + efficace :     
           
+import sys
 
+liste =[]
+
+Menu = """ Choisissez parmi les 5 options suivantes :
+1: Ajouter un élément à la liste
+2: Retirer un élément à la liste
+3: Afficher la liste
+4: Vider la liste
+5: Quitter
+Votre choix : """
         
 
 
