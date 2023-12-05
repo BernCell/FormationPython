@@ -1269,7 +1269,19 @@ while True:
     print("-" * 50) #Pour séparer les divers choix faits par le User
         
         
+#Exo Nombre Mystere Deviner le nombre mystere en 6 essais
 
+number = []
+
+for number in range(0, 100):
+    for i in range(6):
+        input("Devinez le nombre compris entre 1 et 100")
+
+
+
+
+        
+    
 
 
   
