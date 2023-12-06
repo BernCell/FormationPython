@@ -1218,64 +1218,94 @@ print(mot_invert2) # retourne ['n', 'o', 'h', 't', 'y', 'P']
 
 ## Une solution + efficace :     
           
-import sys #module surtout utile pour quitter le script de liste de courses
+# import sys 
+
+#module surtout utile pour quitter le script de liste de courses
 # Par convention on met en majuscule les variables globales : LISTE, MENU, MENU_CHOICES 
 
-LISTE = [] 
+# LISTE = [] 
 
-MENU = """Choisissez parmi les 5 options suivantes :
-1: Ajouter un élément à la liste
-2: Retirer un élément à la liste
-3: Afficher la liste
-4: Vider la liste
-5: Quitter
-👉 Votre choix : """
+# MENU = """Choisissez parmi les 5 options suivantes :
+# 1: Ajouter un élément à la liste
+# 2: Retirer un élément à la liste
+# 3: Afficher la liste
+# 4: Vider la liste
+# 5: Quitter
+# 👉 Votre choix : """
 
-MENU_CHOICES = ["1", "2", "3", "4", "5"]
+# MENU_CHOICES = ["1", "2", "3", "4", "5"]
 
-while True: 
-    user_choice = ""
-    while user_choice not in MENU_CHOICES:
-        user_choice = input(MENU)
-        if user_choice not in MENU_CHOICES:
-            print("Choisissez une option valide !")
+# while True: 
+#     user_choice = ""
+#     while user_choice not in MENU_CHOICES:
+#         user_choice = input(MENU)
+#         if user_choice not in MENU_CHOICES:
+#             print("Choisissez une option valide !")
 
-    if user_choice == "1": #Ajouter un élément à la liste 
-        item = input("Ajouter un élément à la liste : ")
-        LISTE.append(item)
-        print(f"L'élément {item} a été ajouté à la liste !")
-    elif user_choice == "2": # Retirer un élément à la liste
-        item = input("Retirer un élément à la liste : ")
-        if item in LISTE:
-            LISTE.remove(item)
-            print(f"L'élément {item} a été enlevé de la liste !")
-        else:
-            print(f"L'élément n'est pas dans la liste !")
-    elif user_choice == "3": # Afficher la liste
-        if LISTE: # retourne True donc Liste avec au moins un élément
-            print(LISTE)
-            for i, item in enumerate(LISTE, 1): # le 1er indice commencera à la valeur "1" et ainsi de suite
-                print(f"{i}: {item}")
-        else:
-            print("La liste est vide")
+    # if user_choice == "1": #Ajouter un élément à la liste 
+    #     item = input("Ajouter un élément à la liste : ")
+    #     LISTE.append(item)
+    #     print(f"L'élément {item} a été ajouté à la liste !")
+    # elif user_choice == "2": # Retirer un élément à la liste
+    #     item = input("Retirer un élément à la liste : ")
+    #     if item in LISTE:
+    #         LISTE.remove(item)
+    #         print(f"L'élément {item} a été enlevé de la liste !")
+    #     else:
+    #         print(f"L'élément n'est pas dans la liste !")
+    # elif user_choice == "3": # Afficher la liste
+    #     if LISTE: # retourne True donc Liste avec au moins un élément
+    #         print(LISTE)
+    #         for i, item in enumerate(LISTE, 1): # le 1er indice commencera à la valeur "1" et ainsi de suite
+    #             print(f"{i}: {item}")
+    #     else:
+    #         print("La liste est vide")
             
-    elif user_choice == "4": # Vider la liste
-        LISTE.clear()
-        print("La liste est maintenant vide")
-    elif user_choice == "5": # Quitter
-        print("Merci de votre visite, Au revoir !!!")
-        sys.exit()
+    # elif user_choice == "4": # Vider la liste
+    #     LISTE.clear()
+    #     print("La liste est maintenant vide")
+    # elif user_choice == "5": # Quitter
+    #     print("Merci de votre visite, Au revoir !!!")
+    #     sys.exit()
         
-    print("-" * 50) #Pour séparer les divers choix faits par le User
+    # print("-" * 50) #Pour séparer les divers choix faits par le User  
         
         
 #Exo Nombre Mystere Deviner le nombre mystere en 6 essais
 
-number = []
+from random import randint
 
-for number in range(0, 100):
-    for i in range(6):
-        input("Devinez le nombre compris entre 1 et 100")
+nbre_search = randint(0, 100)
+essai = 5
+
+
+while essai > 0:
+    nbre_enter = input("Devinez le nombre compris entre 0 et 100 : ")
+    while not nbre_enter.isdigit():
+                print("Veuillez entrer un nombre valide")
+                nbre_enter = input("Devinez un nombre entre 0 et 100 : ")
+    while not int(nbre_enter) < 0 and int(nbre_enter) > 100:
+            print("Veuillez entrer un nombre entre 1 et 100 : ")
+            nbre_enter = input("Devinez un nombre entre 0 et 100 : ")
+
+    if int(nbre_enter) > nbre_search:
+        print(f"Le nombre mystere est plus petit que {nbre_enter}")
+        
+        print(f"Il te reste {(essai - 1)} essai(s) ")
+    
+    elif int(nbre_enter) < nbre_search:
+        print(f"Le nombre mystere est plus grand que {nbre_enter}")
+        
+        print(f"Il te reste {essai - 1} essai(s) ")
+
+    elif essai == 0:
+        print(" Vous n'avez pas trouvé le nombre mysère")
+
+    else:
+        
+        print( f"Bravo, en {essai - 1} essai(s) vous avez trouvé le nombre mystère qui est {nbre_search} !")
+        
+       
 
 
 
