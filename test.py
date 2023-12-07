@@ -1276,7 +1276,8 @@ print(mot_invert2) # retourne ['n', 'o', 'h', 't', 'y', 'P']
 from random import randint
 
 nbre_search = randint(0, 100)
-essai = 5
+essai = 6
+reste = 0
 
 
 while essai > 0:
@@ -1285,25 +1286,34 @@ while essai > 0:
                 print("Veuillez entrer un nombre valide")
                 nbre_enter = input("Devinez un nombre entre 0 et 100 : ")
     while not int(nbre_enter) < 0 and int(nbre_enter) > 100:
-            print("Veuillez entrer un nombre entre 1 et 100 : ")
-            nbre_enter = input("Devinez un nombre entre 0 et 100 : ")
+        print("Veuillez entrer un nombre entre 1 et 100 : ")
+        nbre_enter = input("Devinez un nombre entre 0 et 100 : ")
 
     if int(nbre_enter) > nbre_search:
         print(f"Le nombre mystere est plus petit que {nbre_enter}")
-        
-        print(f"Il te reste {(essai - 1)} essai(s) ")
+        essai = essai - 1
+        reste = reste + 1
+        print(f"Il te reste {essai} essai(s) ")
     
     elif int(nbre_enter) < nbre_search:
+        
         print(f"Le nombre mystere est plus grand que {nbre_enter}")
         
-        print(f"Il te reste {essai - 1} essai(s) ")
+        essai = essai - 1
+        reste = reste + 1
+        
+        print(f"Il te reste {essai} essai(s) ")
 
     elif essai == 0:
+        essai = essai - 1
+        reste = reste + 1
         print(" Vous n'avez pas trouvé le nombre mysère")
 
     else:
-        
-        print( f"Bravo, en {essai - 1} essai(s) vous avez trouvé le nombre mystère qui est {nbre_search} !")
+        essai = essai - 1
+        reste = reste + 1
+        print( f"Bravo, en {reste} essai(s) vous avez trouvé le nombre mystère qui est {nbre_search} !")
+        break
         
        
 
