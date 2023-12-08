@@ -1303,18 +1303,21 @@ while essai > 0:
         reste = reste + 1
         
         print(f"Il te reste {essai} essai(s) ")
+        
 
     elif essai == 0:
         essai = essai - 1
         reste = reste + 1
         print(" Vous n'avez pas trouvé le nombre mysère")
+    
+   
 
     else:
         essai = essai - 1
         reste = reste + 1
         print( f"Bravo, en {reste} essai(s) vous avez trouvé le nombre mystère qui est {nbre_search} !")
         break
-        
+print("Fin de Partie !!!")       
        
 
 
