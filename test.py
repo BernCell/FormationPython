@@ -1275,49 +1275,94 @@ print(mot_invert2) # retourne ['n', 'o', 'h', 't', 'y', 'P']
 
 from random import randint
 
-nbre_search = randint(0, 100)
-essai = 6
-reste = 0
+### Ma solution 
+
+# nbre_search = randint(0, 100)
+# essai = 6
+# reste = 0
 
 
-while essai > 0:
-    nbre_enter = input("Devinez le nombre compris entre 0 et 100 : ")
-    while not nbre_enter.isdigit():
-                print("Veuillez entrer un nombre valide")
-                nbre_enter = input("Devinez un nombre entre 0 et 100 : ")
-    while not int(nbre_enter) < 0 and int(nbre_enter) > 100:
-        print("Veuillez entrer un nombre entre 1 et 100 : ")
-        nbre_enter = input("Devinez un nombre entre 0 et 100 : ")
+# while essai > 0:
+#     nbre_enter = input("Devinez le nombre compris entre 0 et 100 : ")
+#     while not nbre_enter.isdigit():
+#                 print("Veuillez entrer un nombre valide")
+#                 nbre_enter = input("Devinez un nombre entre 0 et 100 : ")
+#     while not int(nbre_enter) < 0 and int(nbre_enter) > 100:
+#         print("Veuillez entrer un nombre entre 1 et 100 : ")
+#         nbre_enter = input("Devinez un nombre entre 0 et 100 : ")
 
-    if int(nbre_enter) > nbre_search:
-        print(f"Le nombre mystere est plus petit que {nbre_enter}")
-        essai = essai - 1
-        reste = reste + 1
-        print(f"Il te reste {essai} essai(s) ")
+#     if int(nbre_enter) > nbre_search:
+#         print(f"Le nombre mystere est plus petit que {nbre_enter}")
+#         essai = essai - 1
+#         reste = reste + 1
+#         print(f"Il te reste {essai} essai(s) ")
     
-    elif int(nbre_enter) < nbre_search:
+#     elif int(nbre_enter) < nbre_search:
         
-        print(f"Le nombre mystere est plus grand que {nbre_enter}")
+#         print(f"Le nombre mystere est plus grand que {nbre_enter}")
         
-        essai = essai - 1
-        reste = reste + 1
+#         essai = essai - 1
+#         reste = reste + 1
         
-        print(f"Il te reste {essai} essai(s) ")
+#         print(f"Il te reste {essai} essai(s) ")
         
 
-    elif essai == 0:
-        essai = essai - 1
-        reste = reste + 1
-        print(" Vous n'avez pas trouvé le nombre mysère")
+#     elif essai == 0:
+#         essai = essai - 1
+#         reste = reste + 1
+#         print(" Vous n'avez pas trouvé le nombre mysère")
     
    
 
-    else:
-        essai = essai - 1
-        reste = reste + 1
-        print( f"Bravo, en {reste} essai(s) vous avez trouvé le nombre mystère qui est {nbre_search} !")
+#     else:
+#         essai = essai - 1
+#         reste = reste + 1
+#         print( f"Bravo, en {reste} essai(s) vous avez trouvé le nombre mystère qui est {nbre_search} !")
+#         break
+# print("Fin de Partie !!!")   
+
+### La solution de Docstrings  
+
+number_to_find = randint(0, 100)
+remaining_attempts = 5
+
+print("*** Le jeu du nombre mystère ***")
+
+#Boucle principale
+while remaining_attempts > 0:
+    print(f"Il te reste {remaining_attempts} essai{'s if remainning_attempts'} ")
+    
+#Saisie de l'utilisateur
+    user_choice = input(" Devinez le nombre mystère") # Même si le nombre est entré il le sera au format str
+    if not user_choice.isdigit():
+        print("Veuillez un nombre valide !")
+        continue # Pour revenir au début de la boucle while
+    user_choice = int(user_choice) # si le choix de l'utilisateur est bien un nombre on le convertit en integer
+    
+    if number_to_find > user_choice:
+        print(f"Le nombre mystere est plus grand que {user_choice}")
+        
+    elif number_to_find > user_choice:
+        print(f"Le nombre mystere est plus petit que {user_choice}")
+        
+    else :
         break
-print("Fin de Partie !!!")       
+    
+    
+    
+    remaining_attempts -= 1 
+    
+# Gagné ou perdu
+    
+if remaining_attempts == 0:
+    print(f"Dommage, il ne vous reste plus d'essai. Le nombre mystere était  {number_to_find} ")
+else:
+     print(f"Bravo... Le nombre mystere était bien {number_to_find} ")
+     print(f"Tu as trouvé le nombre mystere en {6 - remaining_attempts}  essai")
+    
+    
+print("Fin de Partie !")
+        
        
 
 
