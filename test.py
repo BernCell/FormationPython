@@ -1323,50 +1323,71 @@ from random import randint
 
 ### La solution de Docstrings  
 
-number_to_find = randint(0, 100)
-remaining_attempts = 5
+# number_to_find = randint(0, 100)
+# remaining_attempts = 5
 
-print("*** Le jeu du nombre mystère ***")
+# print("*** Le jeu du nombre mystère ***")
 
-#Boucle principale
-while remaining_attempts > 0:
-    print(f"Il te reste {remaining_attempts} essai{'s if remainning_attempts'} ")
+# #Boucle principale
+# while remaining_attempts > 0:
+#     print(f"Il te reste {remaining_attempts} essai{'s' if remaining_attempts > 1 else''} ")
     
-#Saisie de l'utilisateur
-    user_choice = input(" Devinez le nombre mystère") # Même si le nombre est entré il le sera au format str
-    if not user_choice.isdigit():
-        print("Veuillez un nombre valide !")
-        continue # Pour revenir au début de la boucle while
-    user_choice = int(user_choice) # si le choix de l'utilisateur est bien un nombre on le convertit en integer
+#     #Saisie de l'utilisateur
+#     user_choice = input("Devinez le nombre mystère : ") # Même si le nombre est entré il le sera au format str
+#     if not user_choice.isdigit():
+#         print("Veuillez un nombre valide !")
+#         continue # Pour revenir au début de la boucle while
     
-    if number_to_find > user_choice:
-        print(f"Le nombre mystere est plus grand que {user_choice}")
+#     user_choice = int(user_choice) # si le choix de l'utilisateur est bien un nombre on le convertit en integer
+    
+#     if number_to_find > user_choice:
+#         print(f"Le nombre mystere est plus grand que {user_choice}")
         
-    elif number_to_find > user_choice:
-        print(f"Le nombre mystere est plus petit que {user_choice}")
+#     elif number_to_find < user_choice:
+#         print(f"Le nombre mystere est plus petit que {user_choice}")
         
-    else :
-        break
+#     else :
+#         break
     
     
     
-    remaining_attempts -= 1 
+#     remaining_attempts -= 1 
     
-# Gagné ou perdu
+# # Gagné ou perdu
     
-if remaining_attempts == 0:
-    print(f"Dommage, il ne vous reste plus d'essai. Le nombre mystere était  {number_to_find} ")
-else:
-     print(f"Bravo... Le nombre mystere était bien {number_to_find} ")
-     print(f"Tu as trouvé le nombre mystere en {6 - remaining_attempts}  essai")
+# if remaining_attempts == 0:
+#     print(f"Dommage, il ne vous reste plus d'essai. Le nombre mystere était  {number_to_find} ")
+# else:
+#      print(f"Bravo... Le nombre mystere était bien {number_to_find} ")
+#      print(f"Tu as trouvé le nombre mystere en {6 - remaining_attempts}  essai")
     
     
-print("Fin de Partie !")
-        
+# print("Fin de Partie !")
+
+
+### Exo Projet Jeu de rôle
+
+hero_points = enemy_points = 50
+
+potion = randint(15, 50)
        
+hero_attack = randint(5, 10)
 
+enemy_attack = randint(5, 15)
 
+print("Début de Partie !")
 
+while hero_points > 0 and enemy_points > 0:
+    user_choice = input("Voulez-vous attaquer (1) ou utiliser une potion (2) ? " )
+    
+    if user_choice == "1": 
+        enemy_points -= hero_attack
+        print(enemy_points)
+    elif potion <= 3:
+        hero_points += potion
+    else: 
+        continue
+        
 
         
     
