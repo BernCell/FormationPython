@@ -1380,14 +1380,14 @@ print("Début de Partie !")
 while hero_points > 0 and enemy_points > 0:
     user_choice = input("Voulez-vous attaquer (1) ou utiliser une potion (2) ? " )
     
-    if user_choice == "1": 
-        enemy_points -= hero_attack
-        print(enemy_points)
-    elif potion <= 3:
-        hero_points += potion
-    else: 
-        continue
-        
+if user_choice == "1": 
+    enemy_points -= hero_attack
+    print(enemy_points)
+elif potion <= 3:
+    hero_points += potion
+else:
+    break 
+         
 
         
     
