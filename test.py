@@ -1389,6 +1389,8 @@ while hero_points > 0 and enemy_points > 0:
     if not user_choice.isdigit():
        
         continue
+    
+    
 
     user_choice = int(user_choice)
     if user_choice == 1: 
@@ -1403,11 +1405,12 @@ while hero_points > 0 and enemy_points > 0:
         
         
     else:
-        if potion_nbr <= 3:
-            potion_nbr -= 1
+        if potion_nbr >=1 and potion_nbr <= 3:
+            
             hero_points += potion_points
             hero_points -= enemy_attack
             print(" Super !!! 👍 Vous récupérez une potion de vie !!!")
+            potion_nbr -= 1
             print(f"🎁 Il vous reste {potion_nbr} potion{'s' if potion_nbr > 1 else '' }")
             print(f"Ooops !!! 😢 Votre ennemi vous a fait perdre {enemy_attack} points de vie")
             print(f"Il reste toujours à votre ennemi {enemy_points} points de vie")  
@@ -1415,18 +1418,23 @@ while hero_points > 0 and enemy_points > 0:
              
             
         elif potion_nbr == 0:
-            print(f"Il ne vous reste plus de potions 😢")
+            print(f"Il ne vous reste plus de potions 😢") 
             enemy_points -= hero_attack
             hero_points -= enemy_attack
-            print(enemy_points)
-            print(hero_points)  
+            print(f"👍 Vous avez fait perdre {hero_attack} points de vie à votre ennemi")
+            print(f"Il reste à votre ennemi {enemy_points} points de vie")
+                                  
+            print(f"Ooops !!! 😢 Votre ennemi vous a fait perdre {enemy_attack} points de vie")
+             
+            print(f"Il vous reste {hero_points} points de vie")
+            continue  
         
     print(50*"-")   
-    if hero_points == 0:
+if hero_points <= 0:
         print(f"Il reste à votre ennemi {enemy_points} points de vie")  
         print(" Dommage 🤢 , il ne vous reste plus de points de vie, vous avez perdu la partie")
              
-    elif enemy_points == 0:
+elif enemy_points <= 0:
         print(f"Bravo !!!! 👏 Vous avez gagné la partie, il vous reste {hero_points} points de vie 💖")  
         print("Il ne reste plus de points de vie à votre ennemi")
             
