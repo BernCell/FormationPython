@@ -1393,7 +1393,12 @@ while hero_points > 0 and enemy_points > 0:
     
 
     user_choice = int(user_choice)
-    if user_choice == 1: 
+    
+    if not (user_choice == 1 or user_choice == 2):
+        print("Recommencez en choisissant uniquement (1) ou (2)")
+        continue
+    
+    elif user_choice == 1: 
         
         enemy_points -= hero_attack
         hero_points -= enemy_attack
@@ -1409,36 +1414,38 @@ while hero_points > 0 and enemy_points > 0:
             
             hero_points += potion_points
             hero_points -= enemy_attack
-            print(" Super !!! 👍 Vous récupérez une potion de vie !!!")
+            print(" Super !!! 👍 Vous récupérez une potion de vie ...")            
             potion_nbr -= 1
+            
+            
             print(f"🎁 Il vous reste {potion_nbr} potion{'s' if potion_nbr > 1 else '' }")
-            print(f"Ooops !!! 😢 Votre ennemi vous a fait perdre {enemy_attack} points de vie")
+            print(f"Grâce à cette potion, vous récupérez {potion_points} points")
+            print(f" 😢 Votre ennemi vous a malgré tout fait perdre {enemy_attack} points de vie")
             print(f"Il reste toujours à votre ennemi {enemy_points} points de vie")  
             print(f"Il vous reste {hero_points} points de vie")
-             
+            
+            print("En choisissant une potion de vie, vous passez votre tour !!!")
+            hero_points -= enemy_attack
+            
+            print(f"Ooops !!! 😢 Votre ennemi vous a fait perdre {enemy_attack} points de vie à ce tour")
+            print(f"Il vous reste désormais {hero_points} points de vie")
             
         elif potion_nbr == 0:
-            print(f"Il ne vous reste plus de potions 😢") 
-            enemy_points -= hero_attack
-            hero_points -= enemy_attack
-            print(f"👍 Vous avez fait perdre {hero_attack} points de vie à votre ennemi")
-            print(f"Il reste à votre ennemi {enemy_points} points de vie")
-                                  
-            print(f"Ooops !!! 😢 Votre ennemi vous a fait perdre {enemy_attack} points de vie")
-             
-            print(f"Il vous reste {hero_points} points de vie")
+            print(f"Il ne vous reste plus de potions 😢")        
+                        
             continue  
         
     print(50*"-")   
-if hero_points <= 0:
+if hero_points <= 0 or hero_points < enemy_points:
         print(f"Il reste à votre ennemi {enemy_points} points de vie")  
         print(" Dommage 🤢 , il ne vous reste plus de points de vie, vous avez perdu la partie")
              
-elif enemy_points <= 0:
+elif enemy_points <= 0 or hero_points > enemy_points:
         print(f"Bravo !!!! 👏 Vous avez gagné la partie, il vous reste {hero_points} points de vie 💖")  
         print("Il ne reste plus de points de vie à votre ennemi")
             
-
+elif hero_points == enemy_points:
+    print("Match Nul !!!")
         
     
 
