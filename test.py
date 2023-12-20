@@ -1319,9 +1319,11 @@ from random import randint
 #         reste = reste + 1
 #         print( f"Bravo, en {reste} essai(s) vous avez trouvé le nombre mystère qui est {nbre_search} !")
 #         break
-# print("Fin de Partie !!!")   
+# print("Fin de Partie !!!") 
 
-### La solution de Docstrings  
+##############  
+
+### La solution de Docstrings ########  
 
 # number_to_find = randint(0, 100)
 # remaining_attempts = 5
@@ -1364,88 +1366,120 @@ from random import randint
     
 # print("Fin de Partie !")
 
+###############################
+### Exo Projet Jeu de rôle ####
+###############################
 
-### Exo Projet Jeu de rôle
+# hero_points = enemy_points = 50
 
-hero_points = enemy_points = 50
+# potion_points = randint(15, 50)
 
-potion_points = randint(15, 50)
-
-potion_nbr = 3
+# potion_nbr = 3
        
-hero_attack = randint(5, 10)
+# hero_attack = randint(5, 10)
 
-enemy_attack = randint(5, 15)
+# enemy_attack = randint(5, 15)
 
-# user_choice = randint(1, 2)
+# # user_choice = randint(1, 2)
 
-print(f"👉 Pour l'instant, vous avez {hero_points} points de vie")
-print(f"👉 Pour l'instant, votre ennemi possède {enemy_points} points de vie")
-print("Début de Partie ... Bonne chance 😉 !!!")
+# print(f"👉 Pour l'instant, vous avez {hero_points} points de vie")
+# print(f"👉 Pour l'instant, votre ennemi possède {enemy_points} points de vie")
+# print("Début de Partie ... Bonne chance 😉 !!!")
 
-while hero_points > 0 and enemy_points > 0:
-    user_choice = input("👉 Voulez-vous attaquer (1) ou utiliser une potion (2) ? " )
+# while hero_points > 0 and enemy_points > 0:
+#     user_choice = input("👉 Voulez-vous attaquer (1) ou utiliser une potion (2) ? " )
 
-    if not user_choice.isdigit():
+#     if not user_choice.isdigit():
        
-        continue
+#         continue
     
     
 
-    user_choice = int(user_choice)
+#     user_choice = int(user_choice)
     
-    if not (user_choice == 1 or user_choice == 2):
-        print("Recommencez en choisissant uniquement (1) ou (2)")
-        continue
+#     if not (user_choice == 1 or user_choice == 2):
+#         print("Recommencez en choisissant uniquement (1) ou (2)")
+#         continue
     
-    elif user_choice == 1: 
+#     elif user_choice == 1: 
         
-        enemy_points -= hero_attack
-        hero_points -= enemy_attack
-        print(f"👍 Vous avez fait perdre {hero_attack} points de vie à votre ennemi")
-        print(f"Il reste à votre ennemi {enemy_points} points de vie")
-        print(f"👎Votre ennemi vous a fait perdre {enemy_attack} points de vie")
-        print(f"Il vous reste {hero_points} points de vie")   
+#         enemy_points -= hero_attack
+#         hero_points -= enemy_attack
+#         print(f"👍 Vous avez fait perdre {hero_attack} points de vie à votre ennemi")
+#         print(f"Il reste à votre ennemi {enemy_points} points de vie")
+#         print(f"👎Votre ennemi vous a fait perdre {enemy_attack} points de vie")
+#         print(f"Il vous reste {hero_points} points de vie")   
         
         
         
-    else:
-        if potion_nbr >=1 and potion_nbr <= 3:
+#     else:
+#         if potion_nbr >=1 and potion_nbr <= 3:
             
-            hero_points += potion_points
-            hero_points -= enemy_attack
-            print(" Super !!! 👍 Vous récupérez une potion de vie ...")            
-            potion_nbr -= 1
+#             hero_points += potion_points
+#             hero_points -= enemy_attack
+#             print(" Super !!! 👍 Vous récupérez une potion de vie ...")            
+#             potion_nbr -= 1
             
             
-            print(f"🎁 Il vous reste {potion_nbr} potion{'s' if potion_nbr > 1 else '' }")
-            print(f"Grâce à cette potion, vous récupérez {potion_points} points")
-            print(f" 😢 Votre ennemi vous a malgré tout fait perdre {enemy_attack} points de vie")
-            print(f"Il reste toujours à votre ennemi {enemy_points} points de vie")  
-            print(f"Il vous reste {hero_points} points de vie")
+#             print(f"🎁 Il vous reste {potion_nbr} potion{'s' if potion_nbr > 1 else '' }")
+#             print(f"Grâce à cette potion, vous récupérez {potion_points} points")
+#             print(f" 😢 Votre ennemi vous a malgré tout fait perdre {enemy_attack} points de vie")
+#             print(f"Il reste toujours à votre ennemi {enemy_points} points de vie")  
+#             print(f"Il vous reste {hero_points} points de vie")
             
-            print("En choisissant une potion de vie, vous passez votre tour !!!")
-            hero_points -= enemy_attack
+#             print("En choisissant une potion de vie, vous passez votre tour !!!")
+#             hero_points -= enemy_attack
             
-            print(f"Ooops !!! 😢 Votre ennemi vous a fait perdre {enemy_attack} points de vie à ce tour")
-            print(f"Il vous reste désormais {hero_points} points de vie")
+#             print(f"Ooops !!! 😢 Votre ennemi vous a fait perdre {enemy_attack} points de vie à ce tour")
+#             print(f"Il vous reste désormais {hero_points} points de vie")
             
-        elif potion_nbr == 0:
-            print(f"Il ne vous reste plus de potions 😢")        
+#         elif potion_nbr == 0:
+#             print(f"Il ne vous reste plus de potions 😢")        
                         
-            continue  
+#             continue  
         
-    print(50*"-")   
-if hero_points <= 0 or hero_points < enemy_points:
-        print(f"Il reste à votre ennemi {enemy_points} points de vie")  
-        print(" Dommage 🤢 , il ne vous reste plus de points de vie, vous avez perdu la partie")
+#     print(50*"-")   
+# if hero_points <= 0 or hero_points < enemy_points:
+#         print(f"Il reste à votre ennemi {enemy_points} points de vie")  
+#         print(" Dommage 🤢 , il ne vous reste plus de points de vie, vous avez perdu la partie")
              
-elif enemy_points <= 0 or hero_points > enemy_points:
-        print(f"Bravo !!!! 👏 Vous avez gagné la partie, il vous reste {hero_points} points de vie 💖")  
-        print("Il ne reste plus de points de vie à votre ennemi")
+# elif enemy_points <= 0 or hero_points > enemy_points:
+#         print(f"Bravo !!!! 👏 Vous avez gagné la partie, il vous reste {hero_points} points de vie 💖")  
+#         print("Il ne reste plus de points de vie à votre ennemi")
             
-elif hero_points == enemy_points:
-    print("Match Nul !!!")
+# elif hero_points == enemy_points:
+#     print("Match Nul !!!")
+
+### Solution de Docstring
+
+import random 
+
+#Variables globales
+ENEMY_HEALTH = 50
+PLAYER_HEALTH = 50
+NUMBER_OF_POTIONS = 3
+SKIP_TURN = False
+
+while True:
+    #Jeu du Joueur
+    if SKIP_TURN:
+        print("Vous passez votre tour")
+        SKIP_TURN = False
+    else:
+        user_choice =""
+        while user_choice not in ["1", "2"]:
+            user_choice = input("Souhaitez-vous attaquer (1) ou utiliser une potion (2) ?")
+        if user_choice == "1":
+            your_attack = random.randint(5, 10)
+            ENEMY_HEALTH -= your_attack
+            print(f"Vous avez infligé {your_attack} points de dégats à l'ennemi ")
+                       
+        elif user_choice == "2":
+            NUMBER_OF_POTIONS -= 1
+         
+
+
+print("Fin du Jeu !!!")
         
     
 
